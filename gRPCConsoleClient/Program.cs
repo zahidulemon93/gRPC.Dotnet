@@ -16,7 +16,7 @@ namespace gRPCConsoleClient
             var client = new Product.ProductClient(grpcChannel);
             var response = await client.GetProductByIdAsync(data);
             Console.WriteLine(response);
-            Console.ReadLine();
+            //Console.ReadLine();
             using (var clientData = client.GetAllProducts(new GetAllProductsRequest()))
             {
                 while (await clientData.ResponseStream.MoveNext(new System.Threading.CancellationToken()))
@@ -25,6 +25,20 @@ namespace gRPCConsoleClient
                     Console.WriteLine(thisProduct);
                 }
             }
+
+            var client2 = new Catagory.CatagoryClient(grpcChannel);
+     
+            //Console.ReadLine();
+            using (var clientData = client2.GetAllCatagory(new GetAllCatagoryRequest()))
+            {
+                while (await clientData.ResponseStream.MoveNext(new System.Threading.CancellationToken()))
+                {
+                    var thisCatagory = clientData.ResponseStream.Current;
+                    Console.WriteLine(thisCatagory);
+                }
+            }
+
+
             Console.ReadLine();
         }
     }

@@ -6,37 +6,18 @@ using System.Threading.Tasks;
 
 namespace gRPCServer.Data
 {
-    public static class ProductData
+    public static class CatagoryData
     {
-        public static List<ProductModel> ProductModels = new List<ProductModel>
+        public static List<CatagoryModel> CatagoryModels = new List<CatagoryModel>
     {
-        new ProductModel
+        new CatagoryModel
         {
-            ProductId = 1,
-            Name = "Pepsi",
-            Description = "Soft Drink",
-            Price = 10
+            Name = "Shirt",
+           
         },
-        new ProductModel
+        new CatagoryModel
         {
-            ProductId = 2,
-            Name = "Fanta",
-            Description = "Soft Drink",
-            Price = 13
-        },
-        new ProductModel
-        {
-            ProductId = 3,
-            Name = "Pizza",
-            Description = "Fast Food",
-            Price = 25
-        },
-        new ProductModel
-        {
-            ProductId = 4,
-            Name = "French Fries",
-            Description = "Fast Food",
-            Price = 20
+            Name = "Pant",
         }
     };
     }

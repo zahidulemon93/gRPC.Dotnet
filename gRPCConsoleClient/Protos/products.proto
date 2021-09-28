@@ -16,9 +16,24 @@ message GetAllProductsRequest{
 
 }
 
+service Catagory{
+
+	rpc GetAllCatagory (GetAllCatagoryRequest) returns (stream CatagoryModel);
+}
+
+message GetAllCatagoryRequest{
+
+}
+
 message ProductModel{
 	int32 productId = 1;
 	string name = 2;
 	string description = 3;
 	float price =4;
+}
+
+message CatagoryModel{
+	int32 catId = 1;
+	string name = 2;
+
 }
